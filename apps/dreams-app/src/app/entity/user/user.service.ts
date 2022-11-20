@@ -38,16 +38,4 @@ export class UserService {
     console.log('getUsers aangeroepen');
     return this.users;
   }
-
-  getUsersAsObservable(): Observable<User[]> {
-    console.log('getUsersAsObservable aangeroepen');
-    // 'of' is een rxjs operator die een Observable
-    // maakt van de gegeven data.
-    return of(this.users);
-  }
-
-  getUserById(id: number): User {
-    console.log('getUserById aangeroepen');
-    return this.users.filter((user) => user.id === id)[0];
-  }
 }
