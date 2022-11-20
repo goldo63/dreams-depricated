@@ -10,8 +10,8 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', pathMatch: 'full', component: HomeComponent },
+      { path: '', pathMatch: 'full', component: HomeComponent },
+      { path: 'home', pathMatch: 'full', redirectTo: '' },
       { path: 'about', pathMatch: 'full', component: AboutComponent },
     //   {
     //     path: 'users',
