@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
+import {Post, ViewState} from '../post/post.model'
+
 export enum UserRole {
     admin = 'admin',
     editor = 'editor',
@@ -7,6 +9,7 @@ export enum UserRole {
   
   export class User {
     id: number = 0;
+    username?: string = '' ;
     firstName: string = '';
     lastName: string = '';
     emailAdress: string = '';
