@@ -1,0 +1,83 @@
+<div *ngIf="entityExists && entity">
+    <h1>Editing your post</h1>
+</div>
+<div *ngIf="!entityExists">
+    <h1>Creating new post</h1>
+</div>
+
+<form #userEditForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="row">
+        <div class="col-5">
+            <!-- firstName -->
+            <div class="form-group">
+                <label for="firstName">First name</label>
+                <input
+                    type="text"
+                    name="firstName"
+                    class="form-control"
+                    [(ngModel)]="entity!.firstName"
+                    #firstName="ngModel"
+                    minlength="3"
+                    required
+                    [ngClass]="{
+                        'is-invalid': firstName.invalid && firstName.touched
+                    }"
+                />
+                <div
+                    *ngIf="firstName.invalid && firstName.touched"
+                    class="invalid-feedback"
+                >
+                    <div *ngIf="firstName.errors!['required']">
+                        titel is required
+                    </div>
+                    <div *ngIf="firstName.errors!['minlength']">
+                        titel must be 3 chars long.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-7">
+            <!-- lastName -->
+            <div class="form-group">
+                <label for="firlastNamestName">Last name</label>
+                <input
+                    type="text"
+                    name="lastName"
+                    class="form-control"
+                    [(ngModel)]="entity!.lastName"
+                    #lastName="ngModel"
+                    minlength="3"
+                    required
+                    [ngClass]="{
+                        'is-invalid': lastName.invalid && lastName.touched
+                    }"
+                />
+                <div
+                    *ngIf="lastName.invalid && lastName.touched"
+                    class="invalid-feedback"
+                >
+                    <div *ngIf="lastName.errors!['required']">
+                        titel is required
+                    </div>
+                    <div *ngIf="lastName.errors!['minlength']">
+                        titel must be 3 chars long.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Submit en Cancel buttons -->
+    <div class="row py-3">
+        <div class="col">
+            <button
+                type="submit"
+                class="btn btn-primary mx-2"
+                [disabled]="!userEditForm.valid"
+            >
+                Submit
+            </button>
+            <button class="btn btn-warning mx-2" routerLink="..">Cancel</button>
+        </div>
+    </div>
+</form>

@@ -6,7 +6,7 @@ import { User, UserRole } from './user.model';
   providedIn: 'root',
 })
 export class UserService {
-  readonly users: User[] = [
+    users: User[] = [
     {
       id: 0,
       firstName: 'Eerste',
@@ -34,8 +34,47 @@ export class UserService {
     console.log('Service constructor aangeroepen');
   }
 
-  getUsers(): User[] {
-    console.log('getUsers aangeroepen');
+  get getUsers(): User[] {
     return this.users;
   }
+
+  createUser(newUser: User): void {
+    this.users.push(newUser);
+  }
+
+  updateUser(updatedUser: User) {
+      console.log("Updating user " + updatedUser.firstName);
+  
+      const updatedUsers = this.users.filter(
+          (user) => user.id !== updatedUser.id
+      );
+      updatedUsers.push(updatedUser);
+      this.users = updatedUsers;
+      
+      console.log(this.users);
+  }
+
+  deleteUser(id: number){
+    console.log("Updating user by id " + id);
+    this.users.splice(id, 1);
+  }
+
+  getAllUsers(): User[] {
+    console.log('getUsers aangeroepen');
+    return this.getUsers;
+  }
+
+  getUserById(id: number): User {
+    console.log('getUsers aangeroepen');
+    for (const user of this.getUsers) {
+      if (user.id === id) {
+        return user;
+      }
+    }
+    throw new Error('No user found by id ' + id);
+  }
+
+  
+
+  
 }

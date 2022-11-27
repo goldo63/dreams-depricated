@@ -4,6 +4,12 @@ import { LayoutComponent } from './layout/layout.component'
 import { HomeComponent } from './pages/home/home.component'
 import { AboutComponent } from './pages/about/about.component'
 
+import { PostEditComponent } from './entity/post/post-edit/post-edit.component'
+import { PostDetailsComponent } from './entity/post/post-details/post-details.component'
+
+//import { UserDetailsComponent } from './entity/user/user-details/user-details.component'
+import { UserEditComponent } from './entity/user/user-edit/user-edit.component'
+
 
 const routes: Routes = [
   {
@@ -13,26 +19,15 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', component: HomeComponent },
       { path: 'home', pathMatch: 'full', redirectTo: '' },
       { path: 'about', pathMatch: 'full', component: AboutComponent },
-    //   {
-    //     path: 'users',
-    //     loadChildren: () =>
-    //       import(/* webpackChunkName: "user.module" */ '@cswp/feature').then(
-    //         (m) => m.UserModule,
-    //         () => {
-    //           throw { loadChunkError: true }
-    //         }
-    //       )
-    //   },
-    //   {
-    //     path: 'meals',
-    //     loadChildren: () =>
-    //       import(/* webpackChunkName: "meal.module" */ '@cswp/feature').then(
-    //         (m) => m.MealModule,
-    //         () => {
-    //           throw { loadChunkError: true }
-    //         }
-    //       )
-    //   }
+
+      { path: 'post/create', pathMatch: 'full', component: PostEditComponent},
+      { path: 'post/add', pathMatch: 'full', component: PostEditComponent},
+      { path: "post/:id", pathMatch: "full", component: PostDetailsComponent},
+      { path: "post/:id/edit", pathMatch: "full", component: PostEditComponent},
+
+      //{ path: 'user/:id', pathMatch: 'full', component: UserDetailsComponent}
+      { path: 'user/:id/edit', pathMatch: 'full', component: UserEditComponent},
+      { path: 'user/add', pathMatch: 'full', component: UserEditComponent},
     ]
   },
   // { path: 'login', pathMatch: 'full', component: LoginComponent },
