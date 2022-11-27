@@ -6,7 +6,7 @@ import { User, UserRole } from './user.model';
   providedIn: 'root',
 })
 export class UserService {
-    static readonly users: User[] = [
+    static users: User[] = [
     {
       id: 0,
       firstName: 'Eerste',
@@ -48,6 +48,22 @@ export class UserService {
     throw new Error('No user found by id ' + id);
   }
 
+  static createUser(newUser: User): void {
+    this.users.push(newUser);
+  }
+
+  static updateUser(updatedUser: User) {
+      console.log("Updating user " + updatedUser.firstName);
+  
+      const updatedUsers = this.users.filter(
+          (user) => user.id !== updatedUser.id
+      );
+      updatedUsers.push(updatedUser);
+      this.users = updatedUsers;
+      
+      console.log(this.users);
+  }
+
   getAllUsers(): User[] {
     console.log('getUsers aangeroepen');
     return this.getUsers;
@@ -63,8 +79,7 @@ export class UserService {
     throw new Error('No user found by id ' + id);
   }
 
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  static createUser(firstName: string, lastName: string, email: string){
-    this.users.push(new User(firstName, lastName, email));
-  }
+  
+
+  
 }

@@ -7,7 +7,7 @@ import { UserService } from '../user/user.service';
   providedIn: 'root',
 })
 export class PostService {
-  readonly Posts: Post[] = [
+    posts: Post[] = [
     {
       id: 0,
       titel: 'Buiten-bootcamp',
@@ -42,7 +42,37 @@ export class PostService {
   }
 
   getAllPosts(): Post[] {
-    console.log('getUsers aangeroepen');
-    return this.Posts;
+    console.log('getAllPosts aangeroepen');
+    return this.posts;
+  }
+
+  getPostById(id: number): Post {
+    console.log('getPostById aangeroepen');
+    for (const post of this.posts) {
+      if (post.id === id) {
+        return post;
+      }
+    }
+    throw new Error('No post found by id ' + id);
+  }
+
+  createPost(post: Post) {
+    this.posts.push(post);
+  }
+  updatePost(newPost: Post) {
+    console.log("Updating post " + newPost.titel);
+  
+      const updatedPosts = this.posts.filter(
+          (post) => post.id !== newPost.id
+      );
+      updatedPosts.push(newPost);
+      this.posts = updatedPosts;
+      
+      console.log(this.posts);
+  }
+
+  deletePost(id: number){
+    console.log("Deleting post by id" + id);
+    this.posts.splice(id, 1);
   }
 }

@@ -16,16 +16,20 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', component: HomeComponent },
       { path: 'home', pathMatch: 'full', redirectTo: '' },
       { path: 'about', pathMatch: 'full', component: AboutComponent },
+
+      { path: 'post/create', pathMatch: 'full', component: PostEditComponent},
+      { path: 'post/add', pathMatch: 'full', component: PostEditComponent},
+      
       {
         path: "post/:id",
         pathMatch: "full",
         component: PostDetailsComponent,
-    },
-    {
+      },
+      {
         path: "post/:id/edit",
         pathMatch: "full",
         component: PostEditComponent,
-    },
+      },
     ]
   },
   // { path: 'login', pathMatch: 'full', component: LoginComponent },

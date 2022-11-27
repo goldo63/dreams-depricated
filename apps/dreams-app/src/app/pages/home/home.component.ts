@@ -16,7 +16,16 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService, private postService: PostService) {}
 
   ngOnInit(): void {
+    this.updatedEntities();
+  }
+
+  updatedEntities(): void {
     this.users = this.userService.getAllUsers();
     this.posts = this.postService.getAllPosts();
+  }
+
+  deletePost(id: number){
+    this.postService.deletePost(id);
+    this.updatedEntities();
   }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms'
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -29,7 +30,7 @@ import { PostDetailsComponent } from './entity/post/post-details/post-details.co
     PostEditComponent,
     PostDetailsComponent,
   ],
-  imports: [AppRoutingModule, NgbModule, BrowserModule, EntityModule],
+  imports: [AppRoutingModule, FormsModule, NgbModule, BrowserModule, EntityModule],
   providers: [],
   bootstrap: [AppComponent],
 })

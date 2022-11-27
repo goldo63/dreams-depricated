@@ -28,12 +28,15 @@
     <tr *ngFor="let post of posts">
       <td>{{ post.id }}</td>
       <td>
-        <a routerLink="{{ post.id }}">
+        <a routerLink="post/{{ post.id }}">
           {{ post.titel }}</a
         >
       </td>
       <td style="max-width: 500px;">{{ post.content }}</td>
       <td>{{ post.user.firstName }} {{ post.user.lastName }}</td>
+      <!-- <td><a routerLink="post/{{ post.id }}/delete">Delete post</a></td> -->
+      <td><button (click)="deletePost(post.id!)">Delete post</button></td>
+      <td><a href="post/{{ post.id }}/edit"><button>Edit post</button></a></td>
     </tr>
   </tbody>
 </table>
