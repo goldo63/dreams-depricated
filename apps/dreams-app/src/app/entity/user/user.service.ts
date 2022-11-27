@@ -6,7 +6,7 @@ import { User, UserRole } from './user.model';
   providedIn: 'root',
 })
 export class UserService {
-    static users: User[] = [
+    users: User[] = [
     {
       id: 0,
       firstName: 'Eerste',
@@ -35,24 +35,14 @@ export class UserService {
   }
 
   get getUsers(): User[] {
-    return UserService.users;
+    return this.users;
   }
 
-  static staticgetUserById(id: number): User {
-    console.log('getUsers aangeroepen');
-    for (const user of this.users) {
-      if (user.id === id) {
-        return user;
-      }
-    }
-    throw new Error('No user found by id ' + id);
-  }
-
-  static createUser(newUser: User): void {
+  createUser(newUser: User): void {
     this.users.push(newUser);
   }
 
-  static updateUser(updatedUser: User) {
+  updateUser(updatedUser: User) {
       console.log("Updating user " + updatedUser.firstName);
   
       const updatedUsers = this.users.filter(
@@ -62,6 +52,11 @@ export class UserService {
       this.users = updatedUsers;
       
       console.log(this.users);
+  }
+
+  deleteUser(id: number){
+    console.log("Updating user by id " + id);
+    this.users.splice(id, 1);
   }
 
   getAllUsers(): User[] {

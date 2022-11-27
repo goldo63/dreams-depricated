@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -17,6 +17,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { EntityModule } from '@dreams/entity';
 import { PostEditComponent } from './entity/post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './entity/post/post-details/post-details.component';
+import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,15 @@ import { PostDetailsComponent } from './entity/post/post-details/post-details.co
     AboutComponent,
     PostEditComponent,
     PostDetailsComponent,
+    UserEditComponent,
   ],
-  imports: [AppRoutingModule, FormsModule, NgbModule, BrowserModule, EntityModule],
+  imports: [
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
+    BrowserModule,
+    EntityModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

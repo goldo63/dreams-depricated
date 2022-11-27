@@ -7,6 +7,9 @@ import { AboutComponent } from './pages/about/about.component'
 import { PostEditComponent } from './entity/post/post-edit/post-edit.component'
 import { PostDetailsComponent } from './entity/post/post-details/post-details.component'
 
+//import { UserDetailsComponent } from './entity/user/user-details/user-details.component'
+import { UserEditComponent } from './entity/user/user-edit/user-edit.component'
+
 
 const routes: Routes = [
   {
@@ -19,17 +22,12 @@ const routes: Routes = [
 
       { path: 'post/create', pathMatch: 'full', component: PostEditComponent},
       { path: 'post/add', pathMatch: 'full', component: PostEditComponent},
-      
-      {
-        path: "post/:id",
-        pathMatch: "full",
-        component: PostDetailsComponent,
-      },
-      {
-        path: "post/:id/edit",
-        pathMatch: "full",
-        component: PostEditComponent,
-      },
+      { path: "post/:id", pathMatch: "full", component: PostDetailsComponent},
+      { path: "post/:id/edit", pathMatch: "full", component: PostEditComponent},
+
+      //{ path: 'user/:id', pathMatch: 'full', component: UserDetailsComponent}
+      { path: 'user/:id/edit', pathMatch: 'full', component: UserEditComponent},
+      { path: 'user/add', pathMatch: 'full', component: UserEditComponent},
     ]
   },
   // { path: 'login', pathMatch: 'full', component: LoginComponent },
