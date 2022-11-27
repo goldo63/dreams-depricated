@@ -13,6 +13,8 @@
           >
         </td>
         <td>{{ user.emailAdress }}</td>
+        <td><button (click)="deleteUser(user.id!)">Delete user</button></td>
+        <td><a href="user/{{ user.id }}/edit"><button>Edit user</button></a></td>
       </tr>
     </tbody>
 </table>

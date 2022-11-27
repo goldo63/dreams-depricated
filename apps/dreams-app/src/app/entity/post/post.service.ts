@@ -6,6 +6,7 @@ import { UserService } from '../user/user.service';
 @Injectable({
   providedIn: 'root',
 })
+
 export class PostService {
     posts: Post[] = [
     {
@@ -13,7 +14,7 @@ export class PostService {
       titel: 'Buiten-bootcamp',
       content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
       molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum`,
-      user: UserService.staticgetUserById(0),
+      user: this.userService.getUserById(0),
       viewstate: ViewState.public,
       img: null
     },
@@ -22,7 +23,7 @@ export class PostService {
         titel: 'Online marketeer',
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum`,
-        user: UserService.staticgetUserById(1),
+        user: this.userService.getUserById(1),
         viewstate: ViewState.public,
         img: null
     },
@@ -31,13 +32,13 @@ export class PostService {
         titel: 'honden uitlater',
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum`,
-        user: UserService.staticgetUserById(2),
+        user: this.userService.getUserById(2),
         viewstate: ViewState.hidden,
         img: null
     },
   ];
 
-  constructor() {
+  constructor(private userService: UserService) {
     console.log('Service constructor aangeroepen');
   }
 
