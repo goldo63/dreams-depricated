@@ -16,7 +16,8 @@
         "tsConfig": "apps/dreams-app/tsconfig.app.json",
         "assets": [
           "apps/dreams-app/src/favicon.ico",
-          "apps/dreams-app/src/assets"
+          "apps/dreams-app/src/assets",
+          "apps/dreams-app/src/_redirects"
         ],
         "styles": ["apps/dreams-app/src/styles.css"],
         "scripts": []
