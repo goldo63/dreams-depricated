@@ -73,7 +73,11 @@ export class PostService {
   }
 
   deletePost(id: number){
-    console.log("Deleting post by id" + id);
-    this.posts.splice(id, 1);
+    for(let i = 0; i < this.posts.length; i++){
+      if(this.posts[i].id === id){
+        console.log(this.posts.splice(i, 1).length + " posts deleted");
+      }
+    }
+    console.log("Posts by id " + id + " not found");
   }
 }

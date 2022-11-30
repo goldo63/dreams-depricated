@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteUser(id: number){
+    console.log("deleteUser "+ id);
     this.userService.deleteUser(id);
     this.updatedEntities();
   }
