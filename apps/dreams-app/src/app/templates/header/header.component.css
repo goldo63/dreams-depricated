@@ -12,13 +12,9 @@ header{
         align-items: center;
     }
         header .content img{
-            content: url("../../../assets/images/shared/Dreams.svg");
             height: 50px;
             margin: 20px 0;
             transition: 0.5s;
-        }
-        header .content img:hover{
-            content: url("../../../assets/images/shared/Dreams_H.svg");
         }
 
         header .content ul{
