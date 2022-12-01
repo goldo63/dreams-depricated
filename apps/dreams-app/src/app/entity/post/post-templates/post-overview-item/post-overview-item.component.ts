@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../../post.model';
 
 @Component({
   selector: 'dreams-post-overview-item',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-overview-item.component.css'],
 })
 export class PostOverviewItemComponent implements OnInit {
-  constructor() {}
+  post: Post;
 
-  ngOnInit(): void {}
+  constructor(post: Post) {
+    this.post = post;
+  }
+
+  ngOnInit(): void {
+    console.log("Post by id " + this.post.id + " Loaded");
+  }
 }
