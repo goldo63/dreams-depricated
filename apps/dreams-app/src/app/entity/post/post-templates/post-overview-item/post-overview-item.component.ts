@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../post.model';
 
 @Component({
@@ -7,10 +7,11 @@ import { Post } from '../../post.model';
   styleUrls: ['./post-overview-item.component.css'],
 })
 export class PostOverviewItemComponent implements OnInit {
-  post: Post;
+  @Input()
+  post!: Post;
 
-  constructor(post: Post) {
-    this.post = post;
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  constructor() {
   }
 
   ngOnInit(): void {
