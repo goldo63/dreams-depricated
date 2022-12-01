@@ -3,6 +3,7 @@ header{
     background-color: #08061C;
     background-image: url("../../../assets/images/shared/Background.gif");
     margin-bottom: 40px;
+    overflow-x: hidden;
 }
     header .content{
         position: relative;
@@ -37,7 +38,7 @@ header{
         position: relative;
         width: 200%;
         height: 40px;
-
+        
         background-image: url("../../../assets/images/shared/Bottom.png");
         background-position: bottom center;
         background-size: 500px 40px;
