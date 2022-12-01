@@ -1,4 +1,5 @@
 import { User } from "../user/user.model";
+import { Company } from "../company/company.model";
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 
 export enum ViewState {
@@ -13,9 +14,10 @@ export class Post {
   content: string;
   viewstate: ViewState = ViewState.public;
   img = null;
-  user: User;
+  user: User | Company;
 
-  constructor(titel = '', content = '', user: User) {
+  constructor(id = 0, titel = '', content = '', user: User) {
+    this.id = id;
     this.titel = titel;
     this.content = content;
     this.user = user;

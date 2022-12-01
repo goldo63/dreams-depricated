@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post, ViewState } from '../post.model';
 import { ActivatedRoute, Router } from "@angular/router";
 import { PostService } from '../post.service';
-import { UserRole } from '../../user/user.model';
+import { User, UserRole } from '../../user/user.model';
 
 @Component({
   selector: 'dreams-post-edit',
@@ -38,13 +38,7 @@ export class PostEditComponent implements OnInit {
           id: undefined,
           titel: '',
           content: ``,
-          user: {
-            id: 0,
-            firstName: '',
-            lastName: '',
-            emailAdress: '',
-            role: UserRole.guest,
-          },
+          user: new User(0, 'null', 'null' , 'null'),
           viewstate: ViewState.hidden,
           img: null
         };

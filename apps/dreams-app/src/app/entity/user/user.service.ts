@@ -7,27 +7,9 @@ import { User, UserRole } from './user.model';
 })
 export class UserService {
     users: User[] = [
-    {
-      id: 0,
-      firstName: 'Eerste',
-      lastName: 'User',
-      emailAdress: 'usereen@host.com',
-      role: UserRole.admin,
-    },
-    {
-      id: 1,
-      firstName: 'Tweede',
-      lastName: 'User',
-      emailAdress: 'usertwee@host.com',
-      role: UserRole.guest,
-    },
-    {
-      id: 2,
-      firstName: 'Derde',
-      lastName: 'User',
-      emailAdress: 'userdrie@host.com',
-      role: UserRole.editor,
-    },
+    new User(0, 'First', 'User', 'test@test.nl'),
+    new User(1, 'Second', 'User', 'test@test.nl'),
+    new User(2, 'Third', 'User', 'test@test.nl'),
   ];
 
   constructor() {
