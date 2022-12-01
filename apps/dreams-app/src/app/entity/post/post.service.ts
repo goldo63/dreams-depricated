@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Post, ViewState } from './post.model';
 import { UserService } from '../user/user.service';
+import { Company } from '../company/company.model';
 
 @Injectable({
   providedIn: 'root',
@@ -32,7 +33,7 @@ export class PostService {
         titel: 'honden uitlater',
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum`,
-        user: this.userService.getUserById(2),
+        user: new Company('134654651335', 'Hello Company', true),
         viewstate: ViewState.hidden,
         img: null
     },
