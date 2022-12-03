@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from '../../company/company.model';
 import { User } from '../../user/user.model';
 import { Post } from '../post.model';
@@ -20,6 +20,7 @@ export class PostDetailsComponent implements OnInit {
   constructor(
     private postService : PostService,
     private route: ActivatedRoute,
+    private router: Router
     ) {
 
     this.route.paramMap.subscribe(params => {
@@ -43,5 +44,10 @@ export class PostDetailsComponent implements OnInit {
 
   isPostPosterAUser(){
     return this.post.user.isUser();
+  }
+
+  deletePost(){
+    this.postService.deletePost(this.post.id);
+    this.router.navigate(['/'])
   }
 }

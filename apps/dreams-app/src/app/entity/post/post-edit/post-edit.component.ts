@@ -35,7 +35,7 @@ export class PostEditComponent implements OnInit {
       } else {
         this.entityExists = false;
         this.entity = {
-          id: undefined,
+          id: -1,
           titel: '',
           content: ``,
           user: new User(0, 'null', 'null' , 'null'),

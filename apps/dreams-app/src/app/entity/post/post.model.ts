@@ -9,7 +9,7 @@ export enum ViewState {
 }
 
 export class Post {
-  id: number | undefined;
+  id: number;
   titel: string;
   content: string;
   viewstate: ViewState = ViewState.public;
