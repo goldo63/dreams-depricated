@@ -1,1 +1,16 @@
-<p>post-details works!</p>
+<h1>{{ post.titel }}</h1>
+
+<div class="row">
+    <div class="col-7">
+        {{ post.content }}
+        <div class="row reactions">
+            REACTIONS
+        </div>
+    </div>
+    <div *ngIf="isPostPosterAUser()"  class="col-5">
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <div class="otherPosts">
+            <dreams-post-overview-item *ngFor="let post of otherPosts" [post]="post"></dreams-post-overview-item>
+        </div>
+    </div>
+</div>

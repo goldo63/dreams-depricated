@@ -8,14 +8,17 @@ export class Company {
     name: string = '';
     verified: boolean = false
     registrationDate: Date;
+    owner: User;
     users: User[] = [];
 
   
-    constructor(organisationcode: string, name: string, verified: boolean = false) {
+    constructor(id: number, owner: User ,organisationcode: string, name: string, verified: boolean = false) {
+      this.id = id;
       this.organisationcode = organisationcode;
       this.name = name;
       this.verified = verified;
       this.registrationDate = new Date();
+      this.owner = owner;
     }
 
     isUser(): boolean {
