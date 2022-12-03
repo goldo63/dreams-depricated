@@ -29,11 +29,6 @@ export class HomeComponent implements OnInit {
     console.log(this.posts);
   }
 
-  deletePost(id: number){
-    this.postService.deletePost(id);
-    this.updatedEntities();
-  }
-
   deleteUser(id: number){
     console.log("deleteUser "+ id);
     this.userService.deleteUser(id);

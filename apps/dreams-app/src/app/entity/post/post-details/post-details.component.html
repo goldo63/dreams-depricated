@@ -3,6 +3,10 @@
 <div class="row">
     <div class="col-7">
         {{ post.content }}
+        <div class="editable">
+            <button class="btn btn-primary mx-2" routerLink="/post/0/edit">edit</button>
+            <button class="btn btn-danger mx-2" (click)="deletePost()">delete</button>
+        </div>
         <div class="row reactions">
             REACTIONS
         </div>
