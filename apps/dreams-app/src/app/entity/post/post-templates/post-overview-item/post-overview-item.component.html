@@ -2,6 +2,6 @@
     
     <a *ngIf="isPostPosterAUser()" class="postUser" [routerLink]="['user/{{ post.user.id }}']"><p class="postUser">{{ user.firstName }} {{ user.lastName }}</p></a>
     <a *ngIf="!isPostPosterAUser()" class="postUser" [routerLink]="['company/{{ post.user.id }}']"><p class="postUser">{{ company.name }}</p></a>
-    <a href="post/{{ post.id }}"><p class="postTitle">{{ post.titel }}</p></a>
+    <a [routerLink]="['post/{{ post.id }}']"><p class="postTitle">{{ post.titel }}</p></a>
     
 </div>
