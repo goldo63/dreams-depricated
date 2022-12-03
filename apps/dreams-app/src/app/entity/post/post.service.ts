@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Post, ViewState } from './post.model';
 import { UserService } from '../user/user.service';
+import { CompanyService } from '../company/company.service';
 import { Company } from '../company/company.model';
 
 @Injectable({
@@ -33,13 +34,13 @@ export class PostService {
         titel: 'honden uitlater',
         content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum`,
-        user: new Company('134654651335', 'Hello Company', true),
+        user: this.companyService.getCompaniesByCompanyId(0),
         viewstate: ViewState.hidden,
         img: null
     },
   ];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private companyService: CompanyService) {
     console.log('Service constructor aangeroepen');
   }
 
@@ -56,6 +57,10 @@ export class PostService {
       }
     }
     throw new Error('No post found by id ' + id);
+  }
+
+  getPostsByUserId(id: number): Post[] {
+    return this.posts.filter(post => post.user.id == id);
   }
 
   createPost(post: Post) {

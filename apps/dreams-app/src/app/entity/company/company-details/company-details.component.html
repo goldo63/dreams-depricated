@@ -1,0 +1,8 @@
+<h1>{{ company.name }}</h1>
+
+<h2>Posts of {{ company.name }}</h2>
+<div class="row">
+    <div class="posts">
+        <dreams-post-overview-item *ngFor="let post of posts" [post]="post"></dreams-post-overview-item>
+    </div>
+</div>

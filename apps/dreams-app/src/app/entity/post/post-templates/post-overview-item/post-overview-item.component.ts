@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../../post.model';
 import { User } from '../../../user/user.model';
 import { Company } from '../../../company/company.model';
+import { CompanyService } from '../../../company/company.service';
 
 @Component({
   selector: 'dreams-post-overview-item',
@@ -15,10 +16,13 @@ export class PostOverviewItemComponent implements OnInit {
   user: User;
   company: Company;
 
+  companyService: CompanyService;
+
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {
+    this.companyService = new CompanyService();
     this.user = new User(0, 'null', 'null', 'null');
-    this.company = new Company('8979679', 'null', false);
+    this.company = this.companyService.getCompaniesByCompanyId(0);
   }
 
   isPostPosterAUser(): boolean {
