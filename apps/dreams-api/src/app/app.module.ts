@@ -10,7 +10,7 @@ import { DataModule } from './data.module';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      `mongodbes://127.0.0.1:27017/buddy`
+      `mongodb://127.0.0.1:27017/buddy`
     ),
     AuthModule,
     DataModule,
