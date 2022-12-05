@@ -21,6 +21,7 @@ import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
 import { PostOverviewItemComponent } from './entity/post/post-templates/post-overview-item/post-overview-item.component';
 import { CompanyOverviewItemComponent } from './entity/company/company-templates/company-overview-item/company-overview-item.component';
 import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,9 @@ import { CompanyDetailsComponent } from './entity/company/company-details/compan
 
     PostOverviewItemComponent,
     CompanyOverviewItemComponent,
-    
+
     CompanyDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     AppRoutingModule,
