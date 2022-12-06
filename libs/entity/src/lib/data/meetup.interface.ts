@@ -1,6 +1,6 @@
 import { Id } from "./id.type";
 import { Review } from "./review.interface";
-import { UserIdentity } from "./user.interface";
+import { UserIdentity } from "../entities/user/user.interface";
 
 export interface Meetup {
     id: Id;

@@ -18,10 +18,10 @@ export class Identity {
     @Prop({
         required: true,
         unique: true,
-        validate: {
-          validator: isEmail,
-          message: 'should be a valid email address',
-        }
+        // validate: {
+        //   validator: isEmail,
+        //   message: 'should be a valid email address',
+        // }
       })
       emailAddress: string;
 }

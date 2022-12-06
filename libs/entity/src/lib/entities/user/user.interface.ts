@@ -1,6 +1,4 @@
-import { Id } from './id.type'
-import { Review } from './review.interface'
-import { IEntity } from '../base.entity/i.entity'
+import { Id } from '../../data/id.type'
 
 export interface UserIdentity {
     id: Id

@@ -1,6 +1,6 @@
 import { Body, Controller, HttpException, HttpStatus, Post } from '@nestjs/common';
 
-import { ResourceId, Token, UserCredentials, UserRegistration } from '@find-a-buddy/data';
+import { ResourceId, Token, UserCredentials, UserRegistration } from '@dreams/entity';
 
 import { AuthService } from './auth.service';
 

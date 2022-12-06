@@ -2,7 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 
 import { UserService } from './user.service';
 
-import { UserInfo, User } from '@find-a-buddy/data';
+import { UserInfo, User } from '@dreams/entity';
 import { InjectToken, Token } from '../auth/token.decorator';
 
 @Controller('user')
