@@ -14,13 +14,13 @@ import { HeaderComponent } from './templates/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 
-import { EntityModule } from '@dreams/entity';
-import { PostEditComponent } from './entity/post/post-edit/post-edit.component';
-import { PostDetailsComponent } from './entity/post/post-details/post-details.component';
-import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
-import { PostOverviewItemComponent } from './entity/post/post-templates/post-overview-item/post-overview-item.component';
-import { CompanyOverviewItemComponent } from './entity/company/company-templates/company-overview-item/company-overview-item.component';
-import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component';
+// import { EntityModule } from '@dreams/entity';
+// import { PostEditComponent } from './entity/post/post-edit/post-edit.component';
+// import { PostDetailsComponent } from './entity/post/post-details/post-details.component';
+// import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
+// import { PostOverviewItemComponent } from './entity/post/post-templates/post-overview-item/post-overview-item.component';
+// import { CompanyOverviewItemComponent } from './entity/company/company-templates/company-overview-item/company-overview-item.component';
+// import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component';
 import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
@@ -32,14 +32,14 @@ import { LoginComponent } from './pages/login/login.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    PostEditComponent,
-    PostDetailsComponent,
-    UserEditComponent,
+    // PostEditComponent,
+    // PostDetailsComponent,
+    // UserEditComponent,
 
-    PostOverviewItemComponent,
-    CompanyOverviewItemComponent,
+    // PostOverviewItemComponent,
+    // CompanyOverviewItemComponent,
 
-    CompanyDetailsComponent,
+    // CompanyDetailsComponent,
     LoginComponent,
   ],
   imports: [
@@ -47,7 +47,7 @@ import { LoginComponent } from './pages/login/login.component';
     FormsModule,
     NgbModule,
     BrowserModule,
-    EntityModule,
+    // EntityModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

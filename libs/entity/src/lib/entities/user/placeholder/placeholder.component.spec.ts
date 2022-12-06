@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserEditComponent } from './user-edit.component';
+import { PlaceholderComponent } from './placeholder.component';
 
-describe('UserEditComponent', () => {
-  let component: UserEditComponent;
-  let fixture: ComponentFixture<UserEditComponent>;
+describe('PlaceholderComponent', () => {
+  let component: PlaceholderComponent;
+  let fixture: ComponentFixture<PlaceholderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UserEditComponent],
+      declarations: [PlaceholderComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UserEditComponent);
+    fixture = TestBed.createComponent(PlaceholderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
