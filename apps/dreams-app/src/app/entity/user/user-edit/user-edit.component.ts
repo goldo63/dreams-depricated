@@ -27,19 +27,10 @@ export class UserEditComponent implements OnInit {
 
       if(params.get('id')){
         this.entityExists = true;
-        this.entity = {
-          ...this.userService.getUserById(this.entityId),
-      };
-
+        this.entity = this.userService.getUserById(this.entityId);
       } else {
         this.entityExists = false;
-        this.entity = {
-          id: 0,
-          firstName: '',
-          lastName: '',
-          emailAdress: '',
-          role: UserRole.guest,
-        };
+        this.entity = new User(0, 'null', 'null', 'null');
       }
     })
   }

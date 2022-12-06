@@ -1,0 +1,35 @@
+
+.post{
+
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+}
+    a{
+        text-decoration: none;
+        width: fit-content;
+    }
+    p{
+        margin: 0;
+        line-height: 1em;
+        width: fit-content;
+        margin-right: 0px !important;
+    }
+    .postUser{
+        font-size: 12px;
+        margin-bottom: 5px;
+        color: #000;
+    }
+    a.postUser:hover{
+        text-decoration: underline;
+    }
+    .postTitle{
+        font-size: 25px;
+        font-weight: 800;
+        font-family: 'Fredoka One', cursive;
+    }
+    :host:nth-child(odd) .post{
+        background-color: rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }    

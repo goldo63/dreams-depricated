@@ -9,6 +9,7 @@ import { PostDetailsComponent } from './entity/post/post-details/post-details.co
 
 //import { UserDetailsComponent } from './entity/user/user-details/user-details.component'
 import { UserEditComponent } from './entity/user/user-edit/user-edit.component'
+import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component'
 
 
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
       //{ path: 'user/:id', pathMatch: 'full', component: UserDetailsComponent}
       { path: 'user/:id/edit', pathMatch: 'full', component: UserEditComponent},
       { path: 'user/add', pathMatch: 'full', component: UserEditComponent},
+
+      // { path: 'company/:id/edit', pathMatch: 'full', component: CompanyEditComponent},
+      // { path: 'company/add', pathMatch: 'full', component: CompanyEditComponent},
+      { path: 'company/:id', pathMatch: 'full', component: CompanyDetailsComponent},
     ]
   },
   // { path: 'login', pathMatch: 'full', component: LoginComponent },

@@ -1,1 +1,20 @@
-<p>post-details works!</p>
+<h1>{{ post.titel }}</h1>
+
+<div class="row">
+    <div class="col-7">
+        {{ post.content }}
+        <div class="editable">
+            <button class="btn btn-primary mx-2" routerLink="/post/0/edit">edit</button>
+            <button class="btn btn-danger mx-2" (click)="deletePost()">delete</button>
+        </div>
+        <div class="row reactions">
+            REACTIONS
+        </div>
+    </div>
+    <div *ngIf="isPostPosterAUser()"  class="col-5">
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <div class="otherPosts">
+            <dreams-post-overview-item *ngFor="let post of otherPosts" [post]="post"></dreams-post-overview-item>
+        </div>
+    </div>
+</div>

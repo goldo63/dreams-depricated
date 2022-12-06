@@ -18,6 +18,9 @@ import { EntityModule } from '@dreams/entity';
 import { PostEditComponent } from './entity/post/post-edit/post-edit.component';
 import { PostDetailsComponent } from './entity/post/post-details/post-details.component';
 import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
+import { PostOverviewItemComponent } from './entity/post/post-templates/post-overview-item/post-overview-item.component';
+import { CompanyOverviewItemComponent } from './entity/company/company-templates/company-overview-item/company-overview-item.component';
+import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,11 @@ import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
     PostEditComponent,
     PostDetailsComponent,
     UserEditComponent,
+
+    PostOverviewItemComponent,
+    CompanyOverviewItemComponent,
+    
+    CompanyDetailsComponent,
   ],
   imports: [
     AppRoutingModule,

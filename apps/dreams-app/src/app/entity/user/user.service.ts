@@ -7,27 +7,9 @@ import { User, UserRole } from './user.model';
 })
 export class UserService {
     users: User[] = [
-    {
-      id: 0,
-      firstName: 'Eerste',
-      lastName: 'User',
-      emailAdress: 'usereen@host.com',
-      role: UserRole.admin,
-    },
-    {
-      id: 1,
-      firstName: 'Tweede',
-      lastName: 'User',
-      emailAdress: 'usertwee@host.com',
-      role: UserRole.guest,
-    },
-    {
-      id: 2,
-      firstName: 'Derde',
-      lastName: 'User',
-      emailAdress: 'userdrie@host.com',
-      role: UserRole.editor,
-    },
+    new User(0, 'First', 'User', 'test@test.nl'),
+    new User(1, 'Second', 'User', 'test@test.nl'),
+    new User(2, 'Third', 'User', 'test@test.nl'),
   ];
 
   constructor() {
@@ -55,8 +37,13 @@ export class UserService {
   }
 
   deleteUser(id: number){
-    console.log("Updating user by id " + id);
-    this.users.splice(id, 1);
+    console.log("Deleting user by id " + id);
+    for(let i = 0; i < this.users.length; i++){
+      if(this.users[i].id === id){
+        console.log(this.users.splice(i, 1).length + " users deleted");
+      }
+    }
+    console.log("User by id " + id + " not found");
   }
 
   getAllUsers(): User[] {
