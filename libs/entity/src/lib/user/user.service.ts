@@ -1,53 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { User, UserRole } from './user.modal';
+import { User, UserRole } from './user.model';
+import { EntityService } from '../entity/entity.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
-  readonly users: User[] = [
-    {
-      id: 0,
-      firstName: 'Eerste',
-      lastName: 'User',
-      emailAdress: 'usereen@host.com',
-      role: UserRole.admin,
-    },
-    {
-      id: 1,
-      firstName: 'Tweede',
-      lastName: 'User',
-      emailAdress: 'usertwee@host.com',
-      role: UserRole.guest,
-    },
-    {
-      id: 2,
-      firstName: 'Derde',
-      lastName: 'User',
-      emailAdress: 'userdrie@host.com',
-      role: UserRole.editor,
-    },
+export class UserService extends EntityService<User> {
+    users: User[] = [
+    new User(0, 'First', 'User', 'test@test.nl'),
+    new User(1, 'Second', 'User', 'test@test.nl'),
+    new User(2, 'Third', 'User', 'test@test.nl'),
   ];
 
   constructor() {
-    console.log('Service constructor aangeroepen');
-  }
-
-  getUsers(): User[] {
-    console.log('getUsers aangeroepen');
-    return this.users;
-  }
-
-  getUsersAsObservable(): Observable<User[]> {
-    console.log('getUsersAsObservable aangeroepen');
-    // 'of' is een rxjs operator die een Observable
-    // maakt van de gegeven data.
-    return of(this.users);
-  }
-
-  getUserById(id: number): User {
-    console.log('getUserById aangeroepen');
-    return this.users.filter((user) => user.id === id)[0];
+    super(http, config.getApiEndpoint(), 'user');
+    console.log('UserService ' + config.getApiEndpoint());
   }
 }
