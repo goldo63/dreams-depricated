@@ -1,1 +1,1 @@
-export * from './lib/user/user.modal';
+export * from './lib/base.entity/entity.service';

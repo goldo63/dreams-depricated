@@ -5,7 +5,6 @@ import { InjectModel } from '@nestjs/mongoose';
 
 import { Topic, TopicDocument } from './topic.schema';
 import { User, UserDocument } from '../user/user.schema';
-import { Role } from '@find-a-buddy/data';
 
 @Injectable()
 export class TopicService {
