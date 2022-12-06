@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dreams/entity": ["libs/entity/src/index.ts"]
+      "@dreams/entity": ["libs/entity/src/index.ts"],
+      "@dreams/utility": ["libs/utility/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
