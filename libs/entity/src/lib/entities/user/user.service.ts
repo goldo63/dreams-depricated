@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EntityService } from '../../base.entity/entity.service';
-import { UserInfo } from './user.interface';
+import { UserInfo } from '@dreams/data';
 import { ConfigService } from '@dreams/utility';
 
 @Injectable({

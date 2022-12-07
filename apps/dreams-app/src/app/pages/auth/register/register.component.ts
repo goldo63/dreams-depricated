@@ -7,7 +7,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { UserInfo } from '@dreams/entity';
+import { UserInfo } from '@dreams/data';
 import { AuthService } from '@dreams/auth';
 
 /**
@@ -43,9 +43,12 @@ export class RegisterComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private formBuilder: FormBuilder) {}
+    private formBuilder: FormBuilder) {
+      console.log("construct");
+    }
 
   ngOnInit(): void {
+    console.log("init");
     this.registerForm = this.formBuilder.group({
       firstName: new FormControl(null, [Validators.required]),
       lastName: new FormControl(null, [Validators.required]),
@@ -65,14 +68,7 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       const registeredUser: UserInfo = this.registerForm.value;
       
-      this.authService
-      .register(registeredUser)
-      .subscribe((user: UserInfo | undefined) => {
-        if (user) {
-          console.log('user = ', user);
-          //this.router.navigate(['/']);
-        }
-    });
+
 
     } else {
       console.error('registerForm invalid');

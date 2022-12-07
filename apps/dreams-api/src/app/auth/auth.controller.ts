@@ -1,6 +1,6 @@
 import { Body, Controller, HttpException, HttpStatus, Post } from '@nestjs/common';
 
-import { ResourceId, Token, UserCredentials, UserRegistration } from '@dreams/entity';
+import { ResourceId, Token, UserCredentials, UserRegistration } from '@dreams/data';
 
 import { AuthService } from './auth.service';
 

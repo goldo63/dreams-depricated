@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
-import { Id } from '@dreams/entity';
+import { Id } from '@dreams/data';
 
 export interface Token {
   username: Id,

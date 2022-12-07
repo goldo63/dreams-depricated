@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@dreams/auth": ["libs/auth/src/index.ts"],
+      "@dreams/data": ["libs/data/src/index.ts"],
       "@dreams/entity": ["libs/entity/src/index.ts"],
       "@dreams/utility": ["libs/utility/src/index.ts"]
     }

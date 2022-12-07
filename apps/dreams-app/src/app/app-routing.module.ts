@@ -37,7 +37,6 @@ const routes: Routes = [
           )
       },
 
-
       // { path: 'post/create', pathMatch: 'full', component: PostEditComponent},
       // { path: 'post/add', pathMatch: 'full', component: PostEditComponent},
       // { path: "post/:id", pathMatch: "full", component: PostDetailsComponent},

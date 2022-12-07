@@ -1,4 +1,4 @@
-import { Id } from '../../data/id.type'
+import { Id } from '../id.type'
 
 export interface UserIdentity {
     id: Id

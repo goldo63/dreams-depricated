@@ -6,7 +6,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User as UserModel, UserDocument } from './user.schema';
 //import { Meetup, MeetupDocument } from '../meetup/meetup.schema';
 
-import { User, UserInfo } from '@dreams/entity';
+import { User, UserInfo } from '@dreams/data';
 
 @Injectable()
 export class UserService {

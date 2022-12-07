@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { UserIdentity, UserInfo, UserLogin } from '@dreams/entity';
+import { UserIdentity, UserInfo, UserLogin } from '@dreams/data';
 import { Router } from '@angular/router';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import { AlertService, ConfigService } from '@dreams/utility';
@@ -22,6 +22,7 @@ export class AuthService {
     private http: HttpClient,
     private router: Router
   ) {
+    console.log('Authservice initialized')
     console.log(
       'AuthService constructor ' + configService.getConfig().apiEndpoint
     );

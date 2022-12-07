@@ -1,5 +1,5 @@
-import { Id } from '../../data/id.type'
-import { User } from '../user/user.interface'
+import { Id } from '../id.type'
+import { User } from './user.interface'
 
 export enum ViewState {
   public = 'public',
