@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { UserIdentity, UserInfo, UserLogin } from '@dreams/data';
+import { UserRegistration, UserIdentity, UserInfo, UserLogin } from '@dreams/data';
 import { Router } from '@angular/router';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import { AlertService, ConfigService } from '@dreams/utility';
@@ -14,6 +14,12 @@ export class AuthService {
   private readonly CURRENT_USER = 'currentuser';
   private readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
+    //'key': 'x-api-key',
+    'value': 'NNctr6Tjrw9794gFXf3fi6zWBZ78j6Gv3UCb3y0x',
   });
 
   constructor(
@@ -81,12 +87,12 @@ export class AuthService {
 
   register(userData: UserInfo): Observable<UserInfo | undefined> {
     console.log(
-      `register at ${this.configService.getConfig().apiEndpoint}user`
+      `register at ${this.configService.getConfig().apiEndpoint}auth-api/register`
     );
     console.log(userData);
     return this.http
       .post<UserInfo>(
-        `${this.configService.getConfig().apiEndpoint}user`,
+        `${this.configService.getConfig().apiEndpoint}auth-api/register`,
         userData,
         {
           headers: this.headers,

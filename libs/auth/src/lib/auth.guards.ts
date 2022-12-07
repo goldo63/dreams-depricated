@@ -9,7 +9,7 @@ import {
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UserInfo } from '@dreams/entity';
+import { UserInfo } from '@dreams/data';
 import { ModalLeaveYesNoComponent } from '@dreams/utility';
 import { AuthService } from './auth.service';
 

@@ -13,16 +13,12 @@ import { FooterComponent } from './templates/footer/footer.component';
 import { HeaderComponent } from './templates/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
-
-// import { EntityModule } from '@dreams/entity';
-// import { PostEditComponent } from './entity/post/post-edit/post-edit.component';
-// import { PostDetailsComponent } from './entity/post/post-details/post-details.component';
-// import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
-// import { PostOverviewItemComponent } from './entity/post/post-templates/post-overview-item/post-overview-item.component';
-// import { CompanyOverviewItemComponent } from './entity/company/company-templates/company-overview-item/company-overview-item.component';
-// import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
+
+import { ConfigModule } from '@dreams/utility'
+import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,14 +29,6 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    // PostEditComponent,
-    // PostDetailsComponent,
-    // UserEditComponent,
-
-    // PostOverviewItemComponent,
-    // CompanyOverviewItemComponent,
-
-    // CompanyDetailsComponent,
     LoginComponent,
     RegisterComponent,
   ],
@@ -49,8 +37,9 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     FormsModule,
     NgbModule,
     BrowserModule,
+    ConfigModule.forRoot({ apiEndpoint: environment.SERVER_API_URL }),
+    HttpClientModule,
     ReactiveFormsModule
-    // EntityModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

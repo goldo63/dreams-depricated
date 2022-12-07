@@ -64,6 +64,31 @@
                 </span>
               </div>
             </div>
+            <!-- USERNAME -->
+            <div class="col">
+              <label for="inputUserName">UserName</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="UserName"
+                formControlName="userName"
+                id="inputUserName"
+                [ngClass]="{
+                  'is-invalid':
+                    registerForm.get('userName')?.invalid &&
+                    registerForm.get('userName')?.touched
+                }"
+              />
+              <span
+                *ngIf="
+                  !registerForm.get('userName')?.valid &&
+                  registerForm.get('userName')?.touched
+                "
+                class="invalid-feedback"
+              >
+                <p id="userName-invalid">UserName is invalid.</p>
+              </span>
+            </div>
             <!--
             email
            -->

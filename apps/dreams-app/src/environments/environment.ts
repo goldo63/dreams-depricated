@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  
+  SERVER_DOCS_URL: 'http://localhost:3333/docs',
+  SERVER_API_URL: 'http://localhost:3333/',
 };
 
 /*
