@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,14 +14,15 @@ import { HeaderComponent } from './templates/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 
-import { EntityModule } from '@dreams/entity';
-import { PostEditComponent } from './entity/post/post-edit/post-edit.component';
-import { PostDetailsComponent } from './entity/post/post-details/post-details.component';
-import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
-import { PostOverviewItemComponent } from './entity/post/post-templates/post-overview-item/post-overview-item.component';
-import { CompanyOverviewItemComponent } from './entity/company/company-templates/company-overview-item/company-overview-item.component';
-import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component';
-import { LoginComponent } from './pages/login/login.component';
+// import { EntityModule } from '@dreams/entity';
+// import { PostEditComponent } from './entity/post/post-edit/post-edit.component';
+// import { PostDetailsComponent } from './entity/post/post-details/post-details.component';
+// import { UserEditComponent } from './entity/user/user-edit/user-edit.component';
+// import { PostOverviewItemComponent } from './entity/post/post-templates/post-overview-item/post-overview-item.component';
+// import { CompanyOverviewItemComponent } from './entity/company/company-templates/company-overview-item/company-overview-item.component';
+// import { CompanyDetailsComponent } from './entity/company/company-details/company-details.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -32,22 +33,24 @@ import { LoginComponent } from './pages/login/login.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    PostEditComponent,
-    PostDetailsComponent,
-    UserEditComponent,
+    // PostEditComponent,
+    // PostDetailsComponent,
+    // UserEditComponent,
 
-    PostOverviewItemComponent,
-    CompanyOverviewItemComponent,
+    // PostOverviewItemComponent,
+    // CompanyOverviewItemComponent,
 
-    CompanyDetailsComponent,
+    // CompanyDetailsComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     AppRoutingModule,
     FormsModule,
     NgbModule,
     BrowserModule,
-    EntityModule,
+    ReactiveFormsModule
+    // EntityModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

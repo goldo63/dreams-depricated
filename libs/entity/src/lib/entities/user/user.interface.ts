@@ -5,7 +5,13 @@ export interface UserIdentity {
     userName: string
 }
 
+export interface UserLogin {
+  userName: string;
+  password: string;
+}
+
 export interface UserInfo extends UserIdentity{
+  token: UserInfo | undefined;
   firstName: string;
   lastName: string;
   emailAdress: string;
